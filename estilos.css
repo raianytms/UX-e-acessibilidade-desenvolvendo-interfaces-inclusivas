@@ -1,0 +1,51 @@
+/* CSS Personalizado focado em Acessibilidade e Interatividade em CSS Puro */
+          html {
+            font-size: 20px; /* Fonte base ampliada para facilitar a leitura */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        /* Foco visual de alta visibilidade para navegação por teclado */
+        a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+            outline: 5px solid #0284c7 !important;
+            outline-offset: 4px !important;
+        }
+
+        /* Modal de Ajuda de Emergência criado 100% em CSS usando a pseudo-classe :target */
+        .modal-ajuda {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.85);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* Quando a URL contiver #modal-ajuda, o modal fica visível */
+        .modal-ajuda:target {
+            display: flex;
+        }
+
+        /* Personalização dos expansíveis (<details>/<summary>) */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        details summary {
+            list-style: none;
+        }
+
+        details[open] summary .seta {
+            transform: rotate(180deg);
+        }
